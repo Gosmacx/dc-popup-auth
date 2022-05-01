@@ -1,15 +1,16 @@
 # dc-popup-auth
-## _The Last Markdown Editor, Ever_
 
-dc popup auth is a simple and useful vuejs plugin
+dc-popup-auth is a simple and useful Discord **Vuejs** plugin.
 
+![ss](https://s7.gifyu.com/images/rec-screen-_1_.gif)
 
+## Discord Setup:
 
-## Main File:
-
-**Developer Console Link** discord.com/developers/applications/you-bot-id/oauth2/general
+**Developer Console Link:** discord.com/developers/applications/`you-bot-id`/oauth2/general
 
 ![Screen Shot](https://gcdnb.pbrd.co/images/RPROeD19QFIq.png?o=1)
+
+## Main File:
 
 ```js
 import { createApp } from 'vue'
@@ -36,8 +37,11 @@ app.mount('#app')
 <template>
 
     <section >
-        <login-button :callback="callback" title="Login" />
-        <logout-button title="Logout" @click="logout" />
+        <login-button v-if="!user" :callback="callback" title="Login" />
+        <div v-else >
+            <logout-button title="Logout" @click="logout" />
+            <span> {{ user.username }} </span>
+        </div>
     </section>
     
 </template>
@@ -48,11 +52,18 @@ app.mount('#app')
 
 ```html
 <script setup>
+    import { ref } from 'vue'
+
+    const user = ref(null)
+
     const callback = (data) => {
         console.log(data)
+        user.value = data
     }
+
+    const logout = () => {
+        user.value = null
+    }
+
 </script>
 ```
-
-![ss](https://gcdnb.pbrd.co/images/bAJuebwuy8fH.png?o=1) ![ss](https://gcdnb.pbrd.co/images/5mgnlcHcbE5A.png?o=1)
-
