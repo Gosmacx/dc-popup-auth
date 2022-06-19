@@ -8,7 +8,7 @@ dc-popup-auth is a simple and useful Discord **Vuejs** plugin.
 
 **Developer Console Link:** discord.com/developers/applications/`you-bot-id`/oauth2/general
 
-![Screen Shot](https://gcdnb.pbrd.co/images/RPROeD19QFIq.png?o=1)
+![Screen Shot](https://raw.githubusercontent.com/Gosmacx/dc-popup-auth/master/screenshots/dc-1.gif)
 
 ## Main File:
 
